@@ -211,3 +211,14 @@ bot.onText(/^yes confirm$/i, (msg) => {
 });
 
 console.log('Bot is running...');
+
+// Simple HTTP server for Koyeb health checks
+const http = require('http');
+const server = http.createServer((req, res) => {
+  res.writeHead(200);
+  res.end('Bot is running!');
+});
+const PORT = process.env.PORT || 8000;
+server.listen(PORT, () => {
+  console.log(`Health check server running on port ${PORT}`);
+});
