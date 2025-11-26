@@ -17,19 +17,20 @@ bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
   initUser(chatId);
   
-  bot.sendMessage(chatId, 
-    '🎯 *Welcome to Expense Tracker Bot!*\n\n' +
-    '*Commands:*\n' +
-    '• Add expense: `add food 100`\n' +
-    '• Add with note: `add transport 50 uber ride`\n' +
-    '• View total: `total`\n' +
-    '• View list: `list`\n' +
-    '• Get PDF: `pdf`\n' +
-    '• Clear all: `clear`\n' +
-    '• Help: `help`',
-    { parse_mode: 'Markdown' }
-  );
-});
+ bot.sendMessage(chatId, 
+  '🎯 *Welcome to Expense Tracker Bot!*\n\n' +
+  '*Supported Categories:*\n' +
+  'food, transport, grocery, emi, loan, smoking, other\n\n' +
+  '*Commands:*\n' +
+  '• Add expense: `add food 100`\n' +
+  '• Add with note: `add transport 50 uber ride`\n' +
+  '• View total: `total`\n' +
+  '• View list: `list`\n' +
+  '• Get PDF: `pdf`\n' +
+  '• Clear all: `clear`\n' +
+  '• Help: `help`',
+  { parse_mode: 'Markdown' }
+);
 
 bot.onText(/^help$/i, (msg) => {
   const chatId = msg.chat.id;
