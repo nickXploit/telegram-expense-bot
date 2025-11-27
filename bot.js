@@ -17,7 +17,8 @@ bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
   initUser(chatId);
   
- bot.sendMessage(chatId, 
+bot.sendMessage(
+  chatId,
   '🎯 *Welcome to Expense Tracker Bot!*\n\n' +
   '*Supported Categories:*\n' +
   'food, transport, grocery, emi, loan, smoking, other\n\n' +
@@ -31,7 +32,7 @@ bot.onText(/\/start/, (msg) => {
   '• Help: `help`',
   { parse_mode: 'Markdown' }
 );
-
+  
 bot.onText(/^help$/i, (msg) => {
   const chatId = msg.chat.id;
   bot.sendMessage(chatId,
